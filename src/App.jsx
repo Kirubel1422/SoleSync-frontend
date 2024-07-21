@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import UserNav from "./components/Navigation/UserNav";
 import Footer from "./components/Footer/Footer";
 import { twMerge } from "tailwind-merge";
+import Signup from "./pages/Signup";
 const Home = lazy(() => import("./pages/Home"));
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/login" element={<Login />} /> */}
-          {/* <Route path="/signup" element={<Signup />} /> */}
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </main>
 
