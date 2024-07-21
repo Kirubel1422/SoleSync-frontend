@@ -55,7 +55,7 @@ export const AuthSubmit = ({ label, style }) => {
       type="submit"
       className={twMerge(
         style,
-        "appearance-none bg-BRAND py-4 rounded-[16px] text-white text-[16px] font-bold w-full"
+        "appearance-none cursor-pointer bg-BRAND py-4 rounded-[16px] text-white text-[16px] font-bold w-full"
       )}
       value={label}
     />
