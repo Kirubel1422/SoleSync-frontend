@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    font-family: "Rubik", sans-serif;
+  }
+
+  :root {
+    background: #faf5ff;
+  }
+}
