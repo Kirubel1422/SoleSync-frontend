@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import UserNav from "./components/Navigation/UserNav";
+import Footer from "./components/Footer/Footer";
 import { twMerge } from "tailwind-merge";
 const Home = lazy(() => import("./pages/Home"));
 
@@ -18,6 +19,10 @@ function App() {
           {/* <Route path="/signup" element={<Signup />} /> */}
         </Routes>
       </main>
+
+      <footer className={twMerge("mt-[110px] px-[62px] mb-8")}>
+        <Footer />
+      </footer>
     </Suspense>
   );
 }

@@ -6,3 +6,6 @@ export { default as redHeel } from "./redHeel.png";
 export { default as stripedAdidas } from "./stripedAdidas.png";
 export { default as flatShoe } from "./flatShoe.png";
 export { default as grayFlatShoe } from "./grayFlatShoe.png";
+export { default as instagram } from "./instagram.svg";
+export { default as telegram } from "./telegram.svg";
+export { default as whatsapp } from "./whatsapp.svg";

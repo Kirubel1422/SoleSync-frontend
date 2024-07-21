@@ -1,8 +1,21 @@
 import { twMerge } from "tailwind-merge";
-import Shoe from "../../../components/Cards/Shoe";
 import PropTypes from "prop-types";
+import ProductsContainer from "../../../components/Container/ProductsContainer";
+import Shoe from "../../../components/Cards/Shoe";
+import PaginationContainer from "../../../components/Container/PaginationContainer";
+import Paginate from "../../../components/Pagination/Paginate";
 
-const PopularProducts = ({ popProducts }) => {
+// Should be replace from api call.
+const totalItems = 16;
+
+const PopularProducts = ({ popProducts, setSelectedPage, itemsPerPage }) => {
+  const pageCount = Math.ceil(totalItems / itemsPerPage);
+
+  const handlePageClick = (event) => {
+    const selectedPage = event.selected;
+    setSelectedPage(selectedPage);
+  };
+
   return (
     <div>
       <h2
@@ -13,11 +26,15 @@ const PopularProducts = ({ popProducts }) => {
         Popular Products
       </h2>
 
-      <div className={twMerge("grid md:grid-cols-4 gap-[25px]")}>
-        {popProducts.map((prod, index) => (
-          <Shoe {...prod} key={index} />
+      <ProductsContainer>
+        {popProducts.map((product, index) => (
+          <Shoe {...product} key={index} />
         ))}
-      </div>
+      </ProductsContainer>
+
+      <PaginationContainer>
+        <Paginate handlePageClick={handlePageClick} pageCount={pageCount} />
+      </PaginationContainer>
     </div>
   );
 };
@@ -29,5 +46,7 @@ PopularProducts.propTypes = {
     price: PropTypes.number,
     shoeId: PropTypes.string,
   }),
+  setSelectedPage: PropTypes.func,
+  itemsPerPage: PropTypes.number,
 };
 export default PopularProducts;

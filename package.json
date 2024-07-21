@@ -15,6 +15,7 @@
     "react-icons": "^5.2.1",
     "react-image": "^4.1.0",
     "react-loading-skeleton": "^3.4.0",
+    "react-paginate": "^8.2.0",
     "react-router-dom": "^6.25.1",
     "tailwind-merge": "^2.4.0"
   },
@@ -23,6 +24,8 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
@@ -30,5 +33,10 @@
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.6",
     "vite": "^5.3.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
