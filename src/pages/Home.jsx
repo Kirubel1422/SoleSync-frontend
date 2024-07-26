@@ -10,16 +10,25 @@ const itemsPerPage = 4;
 const Home = () => {
   const [selectedPopPage, setSelectedPopPage] = useState(0);
   const [selectedShopPage, setSelectedShopPage] = useState(0);
+  const authorized = true;
 
   return (
     <div className={twMerge("mt-[41px]")}>
-      <Hero />
+      {!authorized && (
+        <>
+          <Hero />
+          <div className={twMerge("mt-[150px]")}>
+            <Collections />
+          </div>
+        </>
+      )}
 
-      <div className={twMerge("mt-[150px]")}>
-        <Collections />
-      </div>
-
-      <div className={twMerge("mt-[110px] flex items-center justify-center")}>
+      <div
+        className={twMerge(
+          "flex items-center justify-center",
+          authorized ? "mt-16" : "mt-[110px] "
+        )}
+      >
         <PopularProducts
           popProducts={popProducts}
           setSelectedPage={setSelectedPopPage}
@@ -29,6 +38,7 @@ const Home = () => {
 
       <div className={twMerge("mt-[110px]")}>
         <Shop
+          authorized={authorized}
           setSelectedPage={setSelectedShopPage}
           itemsPerPage={itemsPerPage}
         />
