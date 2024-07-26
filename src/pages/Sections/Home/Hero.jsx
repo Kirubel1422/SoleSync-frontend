@@ -2,10 +2,11 @@ import { twMerge } from "tailwind-merge";
 import { heroImg } from "../../../assets";
 import { Img } from "react-image";
 import Skeleton from "react-loading-skeleton";
+import PropTypes from "prop-types";
 
-const Hero = () => {
+const Hero = ({ style }) => {
   return (
-    <div>
+    <div className={twMerge(style)}>
       <div className=" md:h-[650px] rounded-[64px]">
         <Img
           className={twMerge(
@@ -34,6 +35,10 @@ const Hero = () => {
       </div>
     </div>
   );
+};
+
+Hero.propTypes = {
+  style: PropTypes.string,
 };
 
 export default Hero;

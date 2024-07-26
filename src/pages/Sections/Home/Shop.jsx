@@ -8,10 +8,12 @@ import { useSearchParams } from "react-router-dom";
 import Shoe from "../../../components/Cards/Shoe";
 import PaginationContainer from "../../../components/Container/PaginationContainer";
 import Paginate from "../../../components/Pagination/Paginate";
+import PrimaryBtn from "../../../components/Buttons/PrimaryBtn";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 const totalItems = 16;
 
-const Shop = ({ setSelectedPage, itemsPerPage }) => {
+const Shop = ({ setSelectedPage, itemsPerPage, authorized }) => {
   const pageCount = Math.ceil(totalItems / itemsPerPage);
 
   const handlePageClick = (event) => {
@@ -21,28 +23,40 @@ const Shop = ({ setSelectedPage, itemsPerPage }) => {
 
   return (
     <div>
-      <h2 className={twMerge("text-[40px] text-PRIMARY font-semibold")}>
-        Shop
-      </h2>
-
-      <div className={twMerge("mt-7")}>
-        <h3 className={twMerge("text-[22px] text-PRIMARY mt-8 mb-[18px]")}>
-          Categories
-        </h3>
-
+      <div
+        className={twMerge(authorized && "flex items-start justify-between")}
+      >
         <div>
-          <List items={categories} />
-        </div>
-      </div>
+          <h2 className={twMerge("text-[40px] text-PRIMARY font-semibold")}>
+            Shop
+          </h2>
 
-      <div className={twMerge("mt-8")}>
-        <h3 className={twMerge("text-[22px] text-PRIMARY mt-8 mb-[18px]")}>
-          Brands
-        </h3>
+          <div className={twMerge("mt-7")}>
+            <h3 className={twMerge("text-[22px] text-PRIMARY mt-8 mb-[18px]")}>
+              Categories
+            </h3>
 
-        <div>
-          <List items={brands} />
+            <div>
+              <List items={categories} />
+            </div>
+          </div>
+
+          <div className={twMerge("mt-8")}>
+            <h3 className={twMerge("text-[22px] text-PRIMARY mt-8 mb-[18px]")}>
+              Brands
+            </h3>
+
+            <div>
+              <List items={brands} />
+            </div>
+          </div>
         </div>
+
+        <PrimaryBtn
+          label={"Proceed to checkout"}
+          onClick={() => null}
+          Icon={MdOutlineArrowRightAlt}
+        />
       </div>
 
       <div className="shoe-container mt-16">
@@ -99,6 +113,7 @@ List.propTypes = {
 Shop.propTypes = {
   setSelectedPage: PropTypes.func,
   itemsPerPage: PropTypes.number,
+  authorized: PropTypes.bool,
 };
 
 export default Shop;
