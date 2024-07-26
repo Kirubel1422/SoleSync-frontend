@@ -22,3 +22,9 @@ export const login = object({
     .matches(/(\W)/, "Must contain at least one special character")
     .min(8, "Must be at least 8 characters."),
 });
+
+export const profile = object({
+  name: string().required("Name is required."),
+  email: string().email("Invalid email").required("Email is required."),
+  phone: string().required("Phone is required."),
+});
