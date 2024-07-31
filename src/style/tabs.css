@@ -1,0 +1,39 @@
+/* TAB Styles*/
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #62bdcb;
+  font-weight: 500;
+  border: transparent;
+}
+
+:where(.css-dev-only-do-not-override-1pg9a38).ant-tabs .ant-tabs-tab-btn {
+  color: rgba(43, 44, 44, 0.8);
+}
+
+.ant-tabs-ink-bar {
+  background-color: #62bdcb !important;
+}
+
+/* Table Pagination Styles*/
+.ant-pagination-item-active {
+  border-color: #62bdcb !important;
+  color: #62bdcb !important;
+}
+
+.ant-pagination-item {
+  color: rgba(43, 44, 44, 0.8);
+}
+
+.ant-table-wrapper .ant-table-thead > tr > th {
+  color: #5c5c5c;
+}
+
+.ant-table-wrapper .ant-table-tbody > tr > td {
+  color: rgba(43, 44, 44, 0.8) !important;
+}
+
+/* Modal Styles*/
+.ant-modal-title {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  color: rgba(43, 44, 44, 0.8) !important;
+}
