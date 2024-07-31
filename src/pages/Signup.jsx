@@ -10,7 +10,7 @@ import { FaRegUser } from "react-icons/fa";
 const Signup = () => {
   const navigate = useNavigate();
   return (
-    <div className={twMerge("h-screen bg-BG")}>
+    <div className={twMerge("h-screen bg-BG px-[62px]")}>
       <div
         className={twMerge(
           "lg:max-w-[553px] mx-auto bg-[#FDFDFD] px-[110px] py-[57px] rounded-[35px]"

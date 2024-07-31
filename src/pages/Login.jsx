@@ -5,13 +5,12 @@ import { login } from "../constants/validationSchema";
 import { AuthField, AuthSubmit } from "../components/Inputs/AuthInput";
 import { Link, useNavigate } from "react-router-dom";
 import { MdAlternateEmail, MdOutlineLock } from "react-icons/md";
-import { FaRegUser } from "react-icons/fa";
 import GoogleAuth from "../components/Buttons/GoogleAuth";
 
 const Login = () => {
   const navigate = useNavigate();
   return (
-    <div className={twMerge("h-screen bg-BG")}>
+    <div className={twMerge("h-screen bg-BG px-[62px]")}>
       <div
         className={twMerge(
           "lg:max-w-[553px] mx-auto bg-[#FDFDFD] px-[110px] py-[57px] rounded-[35px]"

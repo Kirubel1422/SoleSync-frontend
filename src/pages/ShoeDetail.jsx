@@ -13,7 +13,7 @@ const ShoeDetail = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={twMerge("mt-16 overflow-x-hidden")}>
+    <div className={twMerge("mt-16 overflow-x-hidden px-[62px]")}>
       <div>
         <MdOutlineArrowRightAlt
           size={46}

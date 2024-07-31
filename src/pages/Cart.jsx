@@ -9,7 +9,7 @@ import PrimaryBtn from "../components/Buttons/PrimaryBtn";
 const Cart = () => {
   const navigate = useNavigate();
   return (
-    <div className={twMerge("mt-16")}>
+    <div className={twMerge("mt-16 px-[62px]")}>
       <div>
         <MdOutlineArrowRightAlt
           size={46}

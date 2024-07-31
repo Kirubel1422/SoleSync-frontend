@@ -13,7 +13,7 @@ const Home = () => {
   const authorized = true;
 
   return (
-    <div className={twMerge("mt-[41px]")}>
+    <div className={twMerge("mt-[41px] px-[62px]")}>
       {!authorized && (
         <>
           <Hero />
