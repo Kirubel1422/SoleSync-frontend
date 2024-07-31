@@ -8,17 +8,19 @@ const SideNav = () => {
   return (
     <div
       className={twMerge(
-        "bg-[#EDEDED] pl-[30px] pt-[44px] pb-[42px] flex flex-col justify-between"
+        "bg-[#EDEDED] h-screen pl-[30px] pt-[44px] pr-[57px] pb-[42px] flex flex-col justify-between"
       )}
     >
       <div>
-        <div className={twMerge("mb-16")}>
+        <div className={twMerge("mb-16 flex flex-col items-center ")}>
           <span
             className={twMerge("text-[32px] font-semibold text-BRAND block")}
           >
             SoleSync
           </span>
-          <span className={twMerge("text-[12px] text-PRIMARY/80 block")}>
+          <span
+            className={twMerge("text-[12px] font-medium text-PRIMARY/80 block")}
+          >
             Admin Dashboard
           </span>
         </div>
@@ -27,15 +29,17 @@ const SideNav = () => {
           {sideNavData.map((item, index) => (
             <Tab
               key={index}
-              {...item}
+              Icon={item.Icon}
+              label={item.label}
+              path={item.to}
               active={item.to === window.location.pathname}
             />
           ))}
         </div>
       </div>
 
-      <div>
-        <hr className={twMerge("text-[#CECECE] mb-5")} />
+      <div className={twMerge("flex flex-col items-center gap-5")}>
+        <hr className={twMerge("text-[#CECECE]")} />
 
         <div className={twMerge("flex items-center gap-5")}>
           <BiLogOutCircle className={twMerge("text-PRIMARY/80")} size={20} />
@@ -54,12 +58,16 @@ const Tab = ({ Icon, active, label, path }) => {
       to={path}
       className={twMerge(
         active ? "bg-BRAND" : "bg-white",
-        "py-3 pl-[15px] pr-[17px]"
+        active ? "text-white" : "text-[#575757]",
+        "py-3 pl-[15px] pr-[17px] w-[171px] rounded-[8px]"
       )}
     >
       <h3 className={twMerge("flex items-center gap-4")}>
-        <Icon className={twMerge(active ? "text-white" : "text-[#575757]")} />{" "}
-        <span className={twMerge("text-[12px]")}>{label}</span>
+        <Icon
+          className={twMerge(active ? "text-white" : "text-[#575757]")}
+          size={20}
+        />{" "}
+        <span className={twMerge("text-[14px]")}>{label}</span>
       </h3>
     </Link>
   );
